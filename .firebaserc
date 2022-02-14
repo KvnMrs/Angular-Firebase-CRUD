@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "video-games-b36e4": {
+      "hosting": {
+        "Angular-Firebase-CRUD": [
+          "video-games-b36e4"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "video-games-b36e4"
+  }
+}

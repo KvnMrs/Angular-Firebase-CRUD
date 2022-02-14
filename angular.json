@@ -98,6 +98,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "Angular-Firebase-CRUD:build:production",
+            "firebaseProject": "video-games-b36e4",
+            "firebaseHostingSite": "video-games-b36e4"
+          }
         }
       }
     }
