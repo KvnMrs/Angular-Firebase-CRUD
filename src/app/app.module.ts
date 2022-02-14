@@ -8,9 +8,18 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
+import { GameComponent } from './components/game/game.component';
+import { GamesComponent } from './components/games/games.component';
+import { EditGameComponent } from './modal/edit-game/edit-game.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    GameComponent,
+    GamesComponent,
+    EditGameComponent
   ],
   imports: [
     BrowserModule,
@@ -22,3 +31,5 @@ import { FormsModule } from '@angular/forms';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
