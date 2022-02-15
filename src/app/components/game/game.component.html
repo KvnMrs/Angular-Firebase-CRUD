@@ -1,1 +1,29 @@
-<p>game works!</p>
+<h1>Ajouter un nouveau jeu</h1>
+
+<form [formGroup]="this.gameService.form" (ngSubmit)="onSubmit()">
+  <input
+    type="text"
+    placeholder="Nom du jeu"
+    formControlName="name"
+    class="input-name"
+  />
+  <input
+    type="text"
+    placeholder="Image du jeu"
+    formControlName="img_url"
+    class="input-url"
+  />
+  <textarea
+    placeholder="Description du jeu"
+    formControlName="description"
+    class="input-description"
+    cols="30"
+    rows="10"
+  ></textarea>
+
+  <button class="btn-submit" type="submit">Ajouter le jeu</button>
+
+  <ng-template [ngIf]="showSubmitMessage">
+    <div class="submit-message">Le jeu a été ajouter avec succès !</div>
+  </ng-template>
+</form>
