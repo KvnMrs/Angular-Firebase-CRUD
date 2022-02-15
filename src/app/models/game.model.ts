@@ -1,5 +1,5 @@
 export interface IGame {
 name : string;
-img : string
+img_url : string
 description : string
 }
