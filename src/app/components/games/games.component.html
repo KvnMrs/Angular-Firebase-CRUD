@@ -1,1 +1,12 @@
-<p>games works!</p>
+<div class="flex flex-wrap place-content-center w-full mt-5">
+  <div
+    class="w-48 text-center m-5 bg-slate-400 p-4"
+    *ngFor="let item of listGames | async"
+  >
+    <h2 class="text-2xl mb-2">{{ item.data["name"] }}</h2>
+    <img [src]="item.data['img_url']" class="w-32 h-32 m-auto mb-2" />
+    <button type="button" class="bg-sky-500 p-2 w-3/6 rounded-lg">
+      Détails
+    </button>
+  </div>
+</div>
