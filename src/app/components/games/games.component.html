@@ -11,6 +11,7 @@
         <h2 class="text-2xl mb-2">{{ game.name }}</h2>
         <img [src]="game.img_url" class="w-32 h-32 m-auto mb-2 object-cover" />
         <button type="button" class="bg-sky-500 p-2 w-3/6 rounded-lg">
+          <a [routerLink]="['/games', game.id]"> </a>
           Détails
         </button>
       </div>
