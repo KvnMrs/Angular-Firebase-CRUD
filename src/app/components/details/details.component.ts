@@ -9,6 +9,11 @@ import { IGame } from 'src/app/models/game.model';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
+  
+  //after many tests I kept these 2 following tests
+  
+  // try 1
+
   id: string | null | undefined;
   games: IGame[] = []
   game: IGame | undefined;
@@ -27,7 +32,9 @@ export class DetailsComponent implements OnInit {
         this.game = res
 
   })}
-  // ESSAI 2
+
+  // try 2
+
   // games : IGame | undefined
 
   // constructor(public gameService : GameService, private route: ActivatedRoute) { }
