@@ -23,7 +23,6 @@ export class DetailsComponent implements OnInit {
   })
     const routeParams = this.route.snapshot.paramMap;
      this.id = (routeParams.get('gameId'));
-     if (this.id)
       this.gameService.getGameByID(this.id).subscribe(res => {
         this.game = res
 
