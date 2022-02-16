@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from 'src/app/services/game.service';
-import { DocumentData } from 'firebase/firestore/lite';
+import { IGame } from 'src/app/models/game.model';
 @Component({
   selector: 'app-games',
   templateUrl: './games.component.html',
   styleUrls: ['./games.component.css']
 })
 export class GamesComponent implements OnInit {
+  games: IGame[] = [];
 
   constructor(private gameService : GameService) { }
 
-  public listGames: Promise<{ data: DocumentData; id: string }[]> =
-  this.gameService.getGames();
-
   ngOnInit(): void {
-  }
-
+    this.gameService.getGames().subscribe((res: IGame[]) => {
+      this.games = res;
+  })
+}
 }
