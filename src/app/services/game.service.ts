@@ -20,7 +20,7 @@ export class GameService {
     return collectionData(gameRef, { idField: 'id' }) as Observable<IGame[]>;
   }
 
-  getGameByID(id: string) {
+  getGameByID(id: string | null) {
     const gameRef = doc(this.firestore, `Games/${id}`);
     return docData(gameRef, { idField: 'id' }) as Observable<IGame>;
   }
