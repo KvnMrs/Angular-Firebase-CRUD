@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { GameComponent } from './components/game/game.component';
 import { GamesComponent } from './components/games/games.component';
 import { EditGameComponent } from './modal/edit-game/edit-game.component';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EditGameComponent } from './modal/edit-game/edit-game.component';
     HomeComponent,
     GameComponent,
     GamesComponent,
-    EditGameComponent
+    EditGameComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
