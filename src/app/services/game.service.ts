@@ -32,4 +32,8 @@ public addGame(game: IGame) {
   return addDoc(gamesRef, game);
 }
 
+deleteGame(game: IGame) {
+  const gameDocRef = doc(this.firestore, `books/${game.id}`);
+  return deleteDoc(gameDocRef);
+ }
 }
