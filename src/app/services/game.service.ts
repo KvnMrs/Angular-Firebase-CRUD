@@ -33,7 +33,7 @@ public addGame(game: IGame) {
 }
 
 deleteGame(game: IGame) {
-  const gameDocRef = doc(this.firestore, `books/${game.id}`);
+  const gameDocRef = doc(this.firestore, `Games/${game.id}`);
   return deleteDoc(gameDocRef);
  }
 }
