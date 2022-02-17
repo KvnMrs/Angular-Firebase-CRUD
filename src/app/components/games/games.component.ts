@@ -16,5 +16,11 @@ export class GamesComponent implements OnInit {
       this.games = res;
 
   })
+
 }
+deleteGame(game: IGame) {
+  if (confirm('Are you sure to delete this record ?') == true) {
+    this.gameService.deleteGame(game).then(() => 
+     console.log('delete successful'));
+  }}
 }
