@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GameService } from 'src/app/services/game.service';
 import { ActivatedRoute } from '@angular/router';
-import { IGame } from 'src/app/models/game.model';
+import { DocumentData } from 'firebase/firestore';
 
 @Component({
   selector: 'app-details',
@@ -9,43 +9,18 @@ import { IGame } from 'src/app/models/game.model';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  
-  //after many tests I kept these 2 following tests
-  
-  // try 1
 
-  id: string | null | undefined;
-  games: IGame[] = []
-  game: IGame | undefined;
+constructor(public gameService : GameService, private route: ActivatedRoute) { }
 
-  constructor(public gameService : GameService, private route: ActivatedRoute) { }
+  paramId: string = this.route.snapshot.params['id'];
 
+  //variable stored the result of getGameById from service
+  game: Promise<DocumentData | undefined> =
+  this.gameService.getGameByID(this.paramId);
 
   ngOnInit(): void {
-    this.gameService.getGames().subscribe((res: IGame[]) => {
-      this.games = res;
+  }
 
-  })
-    const routeParams = this.route.snapshot.paramMap;
-     this.id = (routeParams.get('gameId'));
-      this.gameService.getGameByID(this.id).subscribe(res => {
-        this.game = res
 
-  })}
-
-  // try 2
-
-  // games : IGame | undefined
-
-  // constructor(public gameService : GameService, private route: ActivatedRoute) { }
-
-  // id: string = this.route.snapshot.params['id'];
-  // game: DocumentData | undefined =
-  // this.gameService.getGameByID(this.id).subscribe((res: IGame) => {
-  //   this.games = res;;
-  // })
-  // ngOnInit(): void {
-
-  // }
 
 }
