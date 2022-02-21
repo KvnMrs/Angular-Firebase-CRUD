@@ -42,4 +42,10 @@ deleteGame(game: IGame) {
   const gameDocRef = doc(this.firestore, `Games/${game.id}`);
   return deleteDoc(gameDocRef);
  }
+
+updateGame(game : IGame) {
+  const gameDocRef = doc(this.firestore, `Games/${game.id}` )
+  return setDoc(gameDocRef, game);
+
+}
 }
