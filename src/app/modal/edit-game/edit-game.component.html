@@ -1,8 +1,8 @@
-<h1 class="text-center text-2xl my-5">Add your game</h1>
+<h1 class="text-center text-2xl my-5">Update</h1>
 
 <form
   [formGroup]="this.gameService.form"
-  (ngSubmit)="onSubmit()"
+  (ngSubmit)="onUpdate()"
   class="flex flex-col py-5 px-3 w-3/4 m-auto bg-slate-300"
 >
   <label for="name" class="text-lg mt-2"> Game name : </label>
@@ -34,6 +34,6 @@
   </button>
 
   <ng-template [ngIf]="showSubmitMessage">
-    <div class="text-xl m-auto">Le jeu a été ajouter avec succès !</div>
+    <div class="text-xl m-auto">the game is updated !</div>
   </ng-template>
 </form>
