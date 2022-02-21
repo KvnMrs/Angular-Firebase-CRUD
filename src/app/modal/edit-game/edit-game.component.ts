@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { GameService } from 'src/app/services/game.service';
 
 @Component({
@@ -7,19 +8,23 @@ import { GameService } from 'src/app/services/game.service';
   styleUrls: ['./edit-game.component.css']
 })
 export class EditGameComponent implements OnInit {
-  showSubmitMessage: boolean; 
+  showSubmitMessage: boolean;
 
-  constructor(public gameService : GameService) { 
+
+  constructor(public gameService : GameService,private route: ActivatedRoute) { 
     this.gameService.form,
     this.showSubmitMessage = false;
   }
 
-  ngOnInit(): void {
-  }
+  paramId: string = this.route.snapshot.params['id'];
 
-  onSubmit() {
+  ngOnInit(): void {
+
+  }
+  
+  onUpdate() {
     const data = this.gameService.form.value;
-    this.gameService.updateGame(data)
+    this.gameService.updateGame(data, this.paramId)
     .then(res => {
       this.showSubmitMessage = true
     })}
