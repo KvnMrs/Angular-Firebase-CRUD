@@ -1,16 +1,22 @@
-<h2 class="text-center text-2xl">Details of {{(game |async)?.['name']}}</h2>
 <div
-  class="w-11/12 text-center m-auto my-3 sm:m-5 bg-gray-700 px-4 py-8 border-2 border-gray-800 shadow-lg hover:scale-105 transition duration-700"
+  class="w-11/12 text-center m-auto my-3 sm:m-5 bg-gray-700 px-4 pb-8 pt-5 border-2 border-gray-800 shadow-lg hover:scale-105 transition duration-700"
 >
+  <h2 class="text-center text-2xl text-white mb-4">
+    Details of <span class="font-semibold">{{(game |async)?.['name']}}</span>
+  </h2>
   <img
     [src]="(game | async)?.['img_url']"
-    class="w-2/4 h-32 m-auto mb-2 object-cover"
+    class="w-2/4 h-72 m-auto mb-2 object-cover"
   />
-  <p class="text-green-300">{{(game |async)?.['description']}}</p>
+  <h3 class="text-lg font-medium text-green-300 my-2">description :</h3>
+  <p class="w-3/5 mx-auto text-white mb-2">
+    {{(game |async)?.['description']}}
+  </p>
+
   <div class="flex">
     <button
       type="button"
-      class="bg-sky-400 hover:bg-sky-600 transition duration-700 px-3 py-1 w-3/6 font-medium rounded-lg m-2"
+      class="w-1/5 bg-sky-400 hover:bg-sky-600 transition duration-700 px-3 py-1 font-medium rounded-lg m-2 mx-auto"
     >
       <a [routerLink]="['/']"> Back </a>
     </button>
