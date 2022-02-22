@@ -1,2 +1,8 @@
-<h1 class="text-3xl bg-green-600 font-bold underline">Hello world!</h1>
-<router-outlet></router-outlet>
+<nav class="bg-green-500 w-screen p-3">
+  <ul class="flex text-center space-x-4 text-xl font-semibold">
+    <li><a routerLink="/" routerLinkActive="active">Games List</a></li>
+  </ul>
+</nav>
+<div class="bg-gray-500 p-5 min-h-screen">
+  <router-outlet></router-outlet>
+</div>
