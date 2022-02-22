@@ -8,5 +8,13 @@ export const environment = {
     authDomain: 'video-games-b36e4.firebaseapp.com',
     messagingSenderId: '627992524369',
   },
+  firebaseConfig : {
+    apiKey: "AIzaSyAebLtpiOB8U5PZ1GOAOebVbSt-8o3keog",
+    authDomain: "video-games-b36e4.firebaseapp.com",
+    projectId: "video-games-b36e4",
+    storageBucket: "video-games-b36e4.appspot.com",
+    messagingSenderId: "627992524369",
+    appId: "1:627992524369:web:80c3f91b85b0dd4841aa70"
+  },
   production: true
 };
