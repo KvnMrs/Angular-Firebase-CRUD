@@ -33,6 +33,8 @@ form = new FormGroup({
 })
 
 
+
+
 public addGame(game: IGame) {
   const gamesRef = collection(this.firestore, 'Games');
   return addDoc(gamesRef, game);
@@ -42,4 +44,10 @@ deleteGame(game: IGame) {
   const gameDocRef = doc(this.firestore, `Games/${game.id}`);
   return deleteDoc(gameDocRef);
  }
+
+updateGame(game : IGame, id : IGame["id"]) {
+  const gameDocRef = doc(this.firestore, `Games/${id}` )
+  return setDoc(gameDocRef, game);
+
+}
 }
