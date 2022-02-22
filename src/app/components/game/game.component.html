@@ -44,4 +44,9 @@
       </button>
     </a>
   </ng-template>
+  <ng-template [ngIf]="showErrorMessage">
+    <div class="text-xl m-auto mt-2 mb-5">
+      It miss some field(s) for a correctly adding 😐
+    </div>
+  </ng-template>
 </form>

@@ -9,10 +9,13 @@ import { GameService } from 'src/app/services/game.service';
 })
 export class GameComponent implements OnInit {
   showSubmitMessage: boolean; 
+  showErrorMessage: boolean; 
 
   constructor(public gameService : GameService) {
     this.gameService.form
     this.showSubmitMessage = false;
+    this.showErrorMessage = false;
+  
    }
 
   ngOnInit(): void {
@@ -20,11 +23,17 @@ export class GameComponent implements OnInit {
 
   onSubmit() {
     const data = this.gameService.form.value;
+    if( data.name == "" || data.img_url == "" || data.description == '') {
+       this.showErrorMessage = true
+       return
+    }
+    else
+    console.log(data.name.length)
     this.gameService.addGame(data)
     .then(res => {
+      this.showErrorMessage = false
       this.showSubmitMessage = true
     })
-      
   }
 
 
