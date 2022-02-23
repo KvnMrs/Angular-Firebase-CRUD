@@ -2,8 +2,18 @@
   class="w-9/12 text-center mx-auto mt-5 bg-slate-300 px-4 pb-8 pt-5 border-2 hover:shadow-xl hover:scale-105 transition duration-700"
 >
   <h2 class="text-center text-2xl mb-4">
-    Details of
-    <span class="font-semibold text-blue-700">{{(game |async)?.['name']}}</span>
+    Details of{{ " " }}
+    <span class="font-semibold text-blue-700"
+      >{{(game|async)?.['name']}}
+      <span
+        class="{{
+          showUnderscore
+            ? 'opacity-0 duration-500 transition '
+            : ' transition duration-500'
+        }}"
+        >__</span
+      >
+    </span>
   </h2>
   <img
     [src]="(game | async)?.['img_url']"
@@ -19,11 +29,11 @@
   </p>
 
   <div class="flex">
-    <button
-      type="button"
+    <a
+      [routerLink]="['/']"
       class="sm:w-2/6 bg-white hover:bg-blue-700 font-mont_sans text-blue-700 hover:text-white border-b-2 border-blue-700 transition duration-700 ease-in-out font-medium px-3 py-1 rounded-lg mt-2 mx-auto"
     >
-      <a [routerLink]="['/']"> Back </a>
-    </button>
+      <button type="button">Back</button>
+    </a>
   </div>
 </div>
