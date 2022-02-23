@@ -36,13 +36,11 @@
     <div class="text-xl m-auto mt-2 mb-5">
       The game has been successfully added !
     </div>
-    <a [routerLink]="['']" class="text-center">
-      <button
-        type="button"
-        class="sm:w-2/6 bg-white hover:bg-blue-700 font-mont_sans text-blue-700 hover:text-white border-b-2 border-blue-700 transition duration-700 ease-in-out font-medium px-3 py-1 rounded-lg mt-2 mx-auto"
-      >
-        Back to Home page
-      </button>
+    <a
+      [routerLink]="['']"
+      class="text-center sm:w-2/6 bg-white hover:bg-blue-700 font-mont_sans text-blue-700 hover:text-white border-b-2 border-blue-700 transition duration-700 ease-in-out font-medium px-3 py-1 rounded-lg mt-2 mx-auto"
+    >
+      <button type="button">Back to Home page</button>
     </a>
   </ng-template>
   <ng-template [ngIf]="showErrorMessage">
