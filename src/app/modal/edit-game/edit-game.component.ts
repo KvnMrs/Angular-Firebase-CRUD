@@ -10,10 +10,7 @@ import { DocumentData } from "@angular/fire/firestore"
 })
 export class EditGameComponent implements OnInit {
   showSubmitMessage: boolean;
-  game: DocumentData | undefined 
- 
-  
-
+  game: DocumentData | undefined
 
   constructor(public gameService : GameService,private route: ActivatedRoute) { 
     this.gameService.form,
@@ -23,14 +20,9 @@ export class EditGameComponent implements OnInit {
   paramId: string = this.route.snapshot.params['id'];
 
    ngOnInit(){
-   
         this.gameService.getGameByID(this.paramId).then(res => {this.game = res})
- 
- 
-    
-    
 }
-  
+
   onUpdate() {
     const data = this.gameService.form.value;
     this.gameService.updateGame(data, this.paramId)
