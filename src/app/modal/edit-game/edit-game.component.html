@@ -8,21 +8,24 @@
   <label for="name" class="text-lg mt-2"> Game name : </label>
   <input
     type="text"
-    placeholder="Nom du jeu"
+    placeholder="{{ game ? game['name'] : '' }}"
     formControlName="name"
+    value="{{ game ? game['name'] : '' }}"
     class="border-2 border-gray-400 p-2"
   />
   <label for="img_url" class="text-lg mt-2"> URL image: </label>
   <input
     type="text"
-    placeholder="Image du jeu"
+    placeholder="{{ game ? game['img_url'] : '' }}"
     formControlName="img_url"
+    value="{{ game ? game['img_url'] : '' }}"
     class="border-2 border-gray-400 p-2"
   />
   <label for="img_url" class="text-lg mt-2"> Game descritpion: </label>
   <textarea
-    placeholder="Description du jeu"
+    placeholder="{{ game ? game['description'] : '' }}"
     formControlName="description"
+    value="{{ game ? game['description'] : '' }}"
     class="h-36 border-2 border-gray-400 p-2"
   ></textarea>
 
