@@ -1,10 +1,21 @@
-<nav class="bg-gray-700 w-screen p-3">
-  <ul class="flex text-center space-x-4 text-xl font-semibold">
-    <li class="text-white">
+<nav class="sm:w-full px-3 py-5 border-b-2 m-auto">
+  <ul
+    class="flex text-center space-x-4 text-base sm:text-xl justify-center sm:justify-start"
+  >
+    <button
+      type="button"
+      class="hover:bg-slate-600 font-mont_sans hover:text-white border-b-2 border-black transition duration-700 ease-in-out font-medium px-3 py-1 rounded-lg mx-2"
+    >
       <a routerLink="/" routerLinkActive="active">Games List</a>
-    </li>
+    </button>
+    <button
+      type="button"
+      class="hover:bg-green-700 font-mont_sans text-green-700 hover:text-white border-b-2 border-green-700 transition duration-700 ease-in-out font-medium px-3 py-1 rounded-lg mx-2"
+    >
+      <a [routerLink]="['/addGame']"> Add your game </a>
+    </button>
   </ul>
 </nav>
-<div class="bg-gray-500 p-5 min-h-screen w-screen">
+<div class="bg-slate-50 p-5 min-h-screen w-screen">
   <router-outlet></router-outlet>
 </div>
