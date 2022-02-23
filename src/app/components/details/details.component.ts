@@ -11,6 +11,7 @@ import { DocumentData } from 'firebase/firestore';
 export class DetailsComponent implements OnInit {
 
 constructor(public gameService : GameService, private route: ActivatedRoute) { }
+showUnderscore = true
 
   paramId: string = this.route.snapshot.params['id'];
 
@@ -19,6 +20,9 @@ constructor(public gameService : GameService, private route: ActivatedRoute) { }
   this.gameService.getGameByID(this.paramId);
 
   ngOnInit(): void {
+    setInterval(() => {
+      this.showUnderscore  = !this.showUnderscore
+    }, 1000)
   }
 
 
