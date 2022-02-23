@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IGame } from 'src/app/models/game.model';
 import { GameService } from 'src/app/services/game.service';
-
+import { DocumentData } from "@angular/fire/firestore"
 @Component({
   selector: 'app-edit-game',
   templateUrl: './edit-game.component.html',
@@ -9,6 +10,9 @@ import { GameService } from 'src/app/services/game.service';
 })
 export class EditGameComponent implements OnInit {
   showSubmitMessage: boolean;
+  game: DocumentData | undefined 
+ 
+  
 
 
   constructor(public gameService : GameService,private route: ActivatedRoute) { 
@@ -18,9 +22,14 @@ export class EditGameComponent implements OnInit {
 
   paramId: string = this.route.snapshot.params['id'];
 
-  ngOnInit(): void {
-
-  }
+   ngOnInit(){
+   
+        this.gameService.getGameByID(this.paramId).then(res => {this.game = res})
+ 
+ 
+    
+    
+}
   
   onUpdate() {
     const data = this.gameService.form.value;
@@ -29,3 +38,7 @@ export class EditGameComponent implements OnInit {
       this.showSubmitMessage = true
     })}
 }
+function setTimeInterval(arg0: () => void, arg1: number) {
+  throw new Error('Function not implemented.');
+}
+
