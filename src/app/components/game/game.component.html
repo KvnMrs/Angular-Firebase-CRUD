@@ -1,10 +1,14 @@
+<!---------------- adding Form  ---------------->
+
 <h1 class="text-center text-2xl my-5">Add your game</h1>
 
+<!-- form template -->
 <form
   [formGroup]="this.gameService.form"
   (ngSubmit)="onSubmit()"
   class="flex flex-col py-5 px-3 w-3/4 m-auto bg-slate-300"
 >
+  <!-- name part -->
   <label for="name" class="text-lg mt-2"> Game name : </label>
   <input
     type="text"
@@ -12,6 +16,7 @@
     formControlName="name"
     class="border-2 border-gray-400 p-2"
   />
+  <!-- image part -->
   <label for="img_url" class="text-lg mt-2"> URL image: </label>
   <input
     type="text"
@@ -19,12 +24,14 @@
     formControlName="img_url"
     class="border-2 border-gray-400 p-2"
   />
+  <!-- description part -->
   <label for="img_url" class="text-lg mt-2"> Game descritpion: </label>
   <textarea
     placeholder="Description du jeu"
     formControlName="description"
     class="h-36 border-2 border-gray-400 p-2"
   ></textarea>
+  <!-- game adding button  -->
   <button
     class="sm:w-2/6 bg-white hover:bg-green-700 font-mont_sans text-green-700 hover:text-white border-b-2 border-green-700 transition duration-700 ease-in-out font-medium px-3 py-1 rounded-lg mt-2 mx-auto"
     type="submit"
@@ -32,10 +39,14 @@
     Validate
   </button>
 
+  <!-- IF form.value not empty ? adding is valide -->
+
+  <!--  Successful message-->
   <ng-template [ngIf]="showSubmitMessage">
     <div class="text-xl m-auto mt-2 mb-5">
       The game has been successfully added !
     </div>
+    <!-- back home page button -->
     <a
       [routerLink]="['']"
       class="text-center sm:w-2/6 bg-white hover:bg-blue-700 font-mont_sans text-blue-700 hover:text-white border-b-2 border-blue-700 transition duration-700 ease-in-out font-medium px-3 py-1 rounded-lg mt-2 mx-auto"
@@ -43,6 +54,9 @@
       <button type="button">Back to Home page</button>
     </a>
   </ng-template>
+
+  <!-- esle :  adding not valide  -->
+  <!-- error message -->
   <ng-template [ngIf]="showErrorMessage">
     <div class="text-xl m-auto mt-2 mb-5">
       It miss some field(s) for a correctly adding 😐

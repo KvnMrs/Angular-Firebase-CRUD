@@ -13,13 +13,15 @@ export class DetailsComponent implements OnInit {
 constructor(public gameService : GameService, private route: ActivatedRoute) { }
 showUnderscore = true
 
+  // retrieve id game from URL
   paramId: string = this.route.snapshot.params['id'];
 
-  //variable stored the result of getGameById from service
+  // using SERVICE for retrieve informations of the game by his ID
   game: Promise<DocumentData | undefined> =
   this.gameService.getGameByID(this.paramId);
 
   ngOnInit(): void {
+    // function to flash the underscore
     setInterval(() => {
       this.showUnderscore  = !this.showUnderscore
     }, 1000)
