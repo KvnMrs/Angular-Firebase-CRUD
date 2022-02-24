@@ -5,6 +5,7 @@ import {
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { IGame } from '../models/game.model';
+import { Data } from '@angular/router';
 
 
 @Injectable({
@@ -29,7 +30,7 @@ export class GameService {
   }
 
   // getGameById
-  public async getGameByID(id: string ) {
+  public async getGameByID(id: string ){
     const gameRef = doc(this.firestore, `Games`, id);
     const DOC_SNAP: DocumentSnapshot<DocumentData> = await getDoc(gameRef);
       return DOC_SNAP.data();
@@ -48,8 +49,8 @@ export class GameService {
   }
 
   // updateGameById
-  updateGame(game : IGame, id : IGame["id"]) {
+  updateGame( id : IGame["id"], game : Data,) {
     const gameDocRef = doc(this.firestore, `Games/${id}` )
-    return setDoc(gameDocRef, game);
+    return updateDoc(gameDocRef, game);
   }
 }
