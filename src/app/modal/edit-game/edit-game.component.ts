@@ -17,20 +17,22 @@ export class EditGameComponent implements OnInit {
     this.showSubmitMessage = false;
   }
 
+  // retrieve id game from URL
   paramId: string = this.route.snapshot.params['id'];
 
    ngOnInit(){
+  // using SERVICE for adding information game in the Placeholders inputs
         this.gameService.getGameByID(this.paramId).then(res => {this.game = res})
 }
 
+  // update function 
   onUpdate() {
     const data = this.gameService.form.value;
+  // using SERVICE for update information(s) game
     this.gameService.updateGame(data, this.paramId)
     .then(res => {
       this.showSubmitMessage = true
     })}
 }
-function setTimeInterval(arg0: () => void, arg1: number) {
-  throw new Error('Function not implemented.');
-}
+
 
