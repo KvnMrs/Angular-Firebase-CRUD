@@ -1,6 +1,8 @@
+<!-- container -->
 <div
   class="w-9/12 text-center mx-auto mt-5 bg-slate-300 px-4 pb-8 pt-5 border-2 hover:shadow-xl hover:scale-105 transition duration-700"
 >
+  <!-- title -->
   <h2 class="text-center text-2xl mb-4">
     Details of{{ " " }}
     <span class="font-semibold text-blue-700"
@@ -15,6 +17,7 @@
       >
     </span>
   </h2>
+  <!-- description/details part  -->
   <img
     [src]="(game | async)?.['img_url']"
     class="w-2/4 h-72 m-auto mb-2 object-cover"
@@ -29,6 +32,7 @@
   </p>
 
   <div class="flex">
+    <!-- back home button -->
     <a
       [routerLink]="['/']"
       class="sm:w-2/6 bg-white hover:bg-blue-700 font-mont_sans text-blue-700 hover:text-white border-b-2 border-blue-700 transition duration-700 ease-in-out font-medium px-3 py-1 rounded-lg mt-2 mx-auto"

@@ -1,10 +1,14 @@
+<!---------------- update Form  ---------------->
+
 <h1 class="text-center text-2xl my-5">Update</h1>
 
+<!-- form template -->
 <form
   [formGroup]="this.gameService.form"
   (ngSubmit)="onUpdate()"
   class="flex flex-col py-5 px-3 w-3/4 m-auto bg-slate-300"
 >
+  <!-- name part -->
   <label for="name" class="text-lg mt-2"> Game name : </label>
   <input
     type="text"
@@ -13,6 +17,7 @@
     value="{{ game ? game['name'] : '' }}"
     class="border-2 border-gray-400 p-2"
   />
+  <!-- image part -->
   <label for="img_url" class="text-lg mt-2"> URL image: </label>
   <input
     type="text"
@@ -21,6 +26,7 @@
     value="{{ game ? game['img_url'] : '' }}"
     class="border-2 border-gray-400 p-2"
   />
+  <!-- description part -->
   <label for="img_url" class="text-lg mt-2"> Game descritpion: </label>
   <textarea
     placeholder="{{ game ? game['description'] : '' }}"
@@ -28,16 +34,19 @@
     value="{{ game ? game['description'] : '' }}"
     class="h-36 border-2 border-gray-400 p-2"
   ></textarea>
-
+  <!-- game updtating button  -->
   <button
     class="sm:w-2/6 bg-white hover:bg-green-700 font-mont_sans text-green-700 hover:text-white border-b-2 border-green-700 transition duration-700 ease-in-out font-medium px-3 py-1 rounded-lg mt-2 mx-auto"
     type="submit"
   >
     Validate
   </button>
+  <!-- IF form.value not empty ? updating is valide -->
 
+  <!--  Successful message-->
   <ng-template [ngIf]="showSubmitMessage">
     <div class="text-xl m-auto mt-2 mb-5">the game is updated !</div>
+    <!-- back home page button -->
     <a [routerLink]="['']" class="text-center">
       <button
         type="button"

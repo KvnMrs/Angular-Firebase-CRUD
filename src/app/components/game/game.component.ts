@@ -8,6 +8,7 @@ import { GameService } from 'src/app/services/game.service';
   styleUrls: ['./game.component.css']
 })
 export class GameComponent implements OnInit {
+  // variable triggers message, submit or error
   showSubmitMessage: boolean; 
   showErrorMessage: boolean; 
 
@@ -15,18 +16,22 @@ export class GameComponent implements OnInit {
     this.gameService.form
     this.showSubmitMessage = false;
     this.showErrorMessage = false;
-  
+
    }
 
   ngOnInit(): void {
   }
 
   onSubmit() {
+    //  checking form value(s)
     const data = this.gameService.form.value;
+
+    // IF a value missing, show error message
     if( data.name == "" || data.img_url == "" || data.description == '') {
        this.showErrorMessage = true
        return
     }
+    // ELSE validate the new game & show submit message
     else
     console.log(data.name.length)
     this.gameService.addGame(data)
